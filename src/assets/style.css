@@ -1,0 +1,288 @@
+/* For the container holding all cards */
+.main_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  list-style: none;
+  margin: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 20px auto;
+  max-width: 900px;
+  padding: 10px;
+  flex-wrap: wrap;               /* ✅ allows wrapping on smaller screens */
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  min-width: 180px;             /* ✅ prevent shrinking too small */
+}
+
+.search-bar .button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+  flex-shrink: 0;               /* ✅ keep button visible */
+}
+
+.search-bar .button:hover {
+  background-color: #0056b3;
+}
+
+/* React Select overrides */
+.basic-multi-select, .basic-single {
+  min-width: 250px;
+}
+
+.select__control {
+  border-radius: 8px !important;
+  border: 1px solid #ccc !important;
+  box-shadow: none !important;
+}
+
+.select__menu {
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.button {
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.load_more {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.load_more button {
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+/* Container styling */
+.dropdown_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 20px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Label styling */
+.dropdown_label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Select dropdown styling */
+.dropdown_select {
+  padding: 10px 15px;
+  font-size: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-width: 220px;
+  background-color: #fff;
+}
+
+.dropdown_select:hover {
+  border-color: #4facfe;
+}
+
+.dropdown_select:focus {
+  border-color: #00f2fe;
+  box-shadow: 0 0 5px rgba(0, 242, 254, 0.5);
+}
+
+/* Selected category display */
+.dropdown_selected {
+  font-size: 14px;
+  color: #555;
+}
+
+.dropdown_selected_text {
+  font-weight: 600;
+  color: #4facfe;
+}
+
+.load_more button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+}
+
+.load_more button:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+.search-bar button:hover {
+  background: linear-gradient(135deg, #357abd, #2c5aa0);
+  transform: scale(1.05);
+}
+
+/* Each card (li element) */
+.main_container li {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.main_container li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Container inside News_card */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Inner sections */
+.first {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  height: 100%;
+}
+
+/* Source logo */
+.source img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Title and content */
+.content h2 {
+  font-size: 1.1rem;
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.content h2 a {
+  text-decoration: none;
+  color: #222;
+  transition: color 0.2s ease;
+}
+
+.content h2 a:hover {
+  color: #0077ff;
+}
+
+.content img {
+  width: 100%;
+  height: auto;                /* ✅ was fixed, now scales naturally */
+  max-height: 220px;           /* ✅ prevents overflow on tall images */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Date */
+.date {
+  margin-top: auto;
+  padding-top: 10px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ========================= */
+/* 📱 Responsive adjustments */
+/* ========================= */
+@media (max-width: 768px) {
+  .search-bar {
+    max-width: 100%;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .search-bar input {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .search-bar .button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .main_container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .content h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar {
+    flex-direction: column;     /* ✅ stack on very small screens */
+    align-items: stretch;
+  }
+
+  .search-bar input, 
+  .search-bar .button {
+    width: 100%;
+  }
+
+  .main_container {
+    grid-template-columns: 1fr; /* ✅ 1 card per row */
+  }
+
+  .content h2 {
+    font-size: 0.95rem;
+  }
+
+  .dropdown_select {
+    width: 100%;               /* ✅ full width dropdown */
+  }
+}
